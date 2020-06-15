@@ -63,21 +63,21 @@ router.post('/', (req, res) => {
 }); //OK
 
 // update an article by the id
-// router.put('/:id', (req, res) => {
-//   const formData = req.body;
-//   const idArticle = req.params.id;
-//   connection.query('UPDATE article SET ? WHERE id = ?', [formData, idArticle], (err, _) => {
-//     if(err){
-//       console.log(err);
-//       return res.status(500).json({
-//         error: 'Une erreur s\'est produite lors de la mise à jour de l\'article'
-//       });
-//     }
-//     return res.status(200).json({
-//       message: 'L\'article a bien été mis à jour !'
-//     });
-//   })
-// }); //OK
+router.put('/:id', (req, res) => {
+  const formData = req.body;
+  const idArticle = req.params.id;
+  connection.query('UPDATE article SET ? WHERE id = ?', [formData, idArticle], (err, _) => {
+    if(err){
+      console.log(err);
+      return res.status(500).json({
+        error: 'Une erreur s\'est produite lors de la mise à jour de l\'article'
+      });
+    }
+    return res.status(200).json({
+      message: 'L\'article a bien été mis à jour !'
+    });
+  })
+}); //OK
 
 // update the boolean "online"
 router.put('/:id', (req, res) => {
