@@ -1,0 +1,47 @@
+#GET ALL
+#GET http://localhost:3000/api/articles
+
+#GET BY ID
+#GET http://localhost:3000/api/articles/2
+
+#GET articles WHERE online=true
+#GET http://localhost:3000/api/articles?tags=3
+
+#POST
+#POST http://localhost:3000/api/articles
+#content-type: application/json
+#
+#{
+#  "date_creation":"2020-06-14",
+#  "online":true,
+#  "tags":"1",
+#  "title":"Mon super nouvel article"
+#}
+
+#PUT BY ID
+PUT http://localhost:3000/api/articles/2
+content-type: application/json
+
+{
+  "date_creation":"2020-06-14",
+  "online":false,
+  "tags":0,
+  "title":"Mon super nouvel article de test!"
+}
+
+#PUT BY BOOLEAN
+#PUT http://localhost:3000/api/articles/1
+#content-type: application/json
+#
+#{
+#  "date_creation": "Dimanche 14 Juin 2020",
+#  "online": false,
+#  "tags": 0,
+#  "title": "Mon super nouvel article !"
+#}
+
+#DELETE
+#DELETE http://localhost:3000/api/articles/3
+
+#DELETE WHERE online is false
+#DELETE http://localhost:3000/api/articles/1/?online=false
